@@ -1,5 +1,5 @@
 login: &login
-  username: quintin
+  username:
   password:
   adapter:  postgresql
   encoding: unicode
