@@ -52,6 +52,7 @@ group :development, :test do
   gem 'spring'
   gem 'pry-rails'
   gem 'pry-rescue'
+  gem 'pry-remote'
   gem 'rubocop'
   gem 'ffaker'
   gem 'factory_girl_rails'
