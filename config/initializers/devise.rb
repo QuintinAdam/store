@@ -5,12 +5,12 @@ Devise.setup do |config|
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # config.secret_key = 'b35bebe0180737c936a751852505972d3a8a7961486565a3f22e71b10ebbd11231a7e1d13c78005f236a93eb7a5e8d77f2b084f597ade53d3319672bdf5ee003'
-Devise.secret_key = "50dc6dc3040d5602ab4a0f6e13a628e5aaefa851dddbcc6b3b9da379ba68c559470fdad24b090a1b406629b97729b12502cf"
+Devise.secret_key = ENV['DEVISE_SECRET'] || '13sdf2376e75768edd33c09588bbe06fdf8dddb67979f559bc79407fa8b7d78d6693c95b0d63ecf663d13cf3542a85b577631d2c580548b5a1eba9306e8877ae'
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'no-reply@' + Rails.application.secrets.domain_name
+  config.mailer_sender = ENV['DEFAULT_EMAIL_FROM']
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -140,7 +140,7 @@ Devise.secret_key = "50dc6dc3040d5602ab4a0f6e13a628e5aaefa851dddbcc6b3b9da379ba6
 
   # ==> Configuration for :validatable
   # Range for password length.
-  config.password_length = 8..128
+  config.password_length = 6..128
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly

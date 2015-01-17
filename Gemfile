@@ -36,15 +36,15 @@ group :development do
   gem 'html2haml'
   gem 'quiet_assets'
   gem 'rails_layout'
+  gem 'annotate', '~> 2.6.5'
+
   gem 'guard'
   gem 'guard-bundler'
   gem 'guard-minitest'
-  gem 'guard-rails'
   gem 'guard-pow'
   gem 'guard-livereload'
   gem 'rack-livereload'
   gem 'ruby_gntp'
-  gem 'annotate', '~> 2.6.5'
 end
 
 group :development, :test do
