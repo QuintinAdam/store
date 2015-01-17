@@ -71,5 +71,4 @@ group :production, :staging do
 end
 
 gem 'spree', github: 'spree/spree', branch: 'rails-4-2'
-gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: 'master'
 gem 'spree_gateway', github: 'spree/spree_gateway', branch: 'master'

@@ -60,18 +60,6 @@ GIT
       spree_core (= 3.0.0.beta)
 
 GIT
-  remote: git://github.com/spree/spree_auth_devise.git
-  revision: 9d47cfb837cb401721c5294b65f90df364fd912b
-  branch: master
-  specs:
-    spree_auth_devise (3.0.0)
-      devise (~> 3.4.1)
-      devise-encryptable (= 0.1.2)
-      json
-      multi_json
-      spree_core (~> 3.0.0.beta)
-
-GIT
   remote: git://github.com/spree/spree_gateway.git
   revision: a2872a02272d34fcb1f99a08243b4e437a10340b
   branch: master
@@ -190,8 +178,6 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-    devise-encryptable (0.1.2)
-      devise (>= 2.1.0)
     docile (1.1.5)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
@@ -540,7 +526,6 @@ DEPENDENCIES
   simple_form
   simplecov
   spree!
-  spree_auth_devise!
   spree_gateway!
   spring
   turbolinks
