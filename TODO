@@ -4,6 +4,7 @@ Flower Alley:
     About
     Events
     Weddings
+    Sympathy
     Contact Us
     Cart
 
@@ -23,3 +24,10 @@ Flower Alley:
       Zip
       Business Name
       Location Type: Residence, Business, Funeral Home, Apartment, Rural Route, School
+
+
+Examples:
+  Cuurent:
+  http://www.blumz.com/
+  Cart: http://www.centralsquareflorist.com/
+  Cart show page: http://www.carithers.com/flowers/Popular-Flowers-Best-Florist-Carithers/
