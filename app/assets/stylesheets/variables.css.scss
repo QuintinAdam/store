@@ -16,3 +16,27 @@ $logopink: #D93898;
 $logolightpink: #FBB8D8;
 $logogreen: #4C9767;
 
+
+//20th January
+$darklategray: #4e4e4e;
+$lightgray: #d2d2d2;
+
+
+.bg-soft-pink{
+  background-color: lighten($logopink,15%); 
+}
+.bold{
+  font-weight: bold;
+}
+
+.top-area{
+  p{
+  margin-bottom: 0px;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+    
+  }
+}
+ 
+
+
