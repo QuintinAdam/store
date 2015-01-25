@@ -18,7 +18,7 @@ $base          : #AAAAAA !default;
 $aluminum      : #999999 !default;
 $jumbo         : #888888 !default;
 $monsoon       : #777777 !default;
-$steel         : #666666 !default;
+$steel         : #666666 !default; 
 $charcoal      : #555555 !default;
 $tuatara       : #444444 !default;
 $oil           : #333333 !default;
@@ -49,6 +49,7 @@ $black         : #000000 !default;
 .text-blue{color: $blue;}
 .text-yellow{color: $yellow;}
 .text-green{color: $green;}
+
 
 
 .bg-white{background: $white;}
