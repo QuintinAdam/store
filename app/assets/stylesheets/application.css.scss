@@ -5,3 +5,9 @@
 @import "framework_and_overrides";
 @import "font-awesome";
 
+.centered-list{
+  list-style: none;
+  li{
+    display: inline-block;
+  }
+}
