@@ -47,10 +47,22 @@ $lightgray: #d2d2d2;
 // 25th January
 
 .tiny-font{ font-size: 14px;}
-.footer-info{
+.footer-menu{
   background-color: #f6f6f6;
   border-top: 1px solid $lightgray;
 }
+.inline-list{
+     // display: inline-block;
+     // float: none;
+    }
+//26 January
+.silver{
+ color: #c4c4c4;
+}
+.darkgray{
+  color: $darklategray;
+}
+
 
 
 
