@@ -8,7 +8,7 @@
       = link_to "Shop" ,'#', class: 'button-link text-logopink '
       %span ||
     %li
-      = link_to "About Us" ,'#',class: 'button-link text-logopink'
+      = link_to "About Us" ,page_path('about'),class: 'button-link text-logopink'
       %span ||
     %li
       = link_to "Weddings" ,'#',class: 'button-link text-logopink'
@@ -50,7 +50,7 @@
     %li
       = link_to "#", class: "text-logopink" , target: "_blank"do
         %i.fa.fa-instagram.fa-2x  
-  %ul.payment-options.inline-list.silver
+  %ul.payment-options.centered-list.silver
     %li
       %i.fa.fa-cc-visa.fa-2x
     %li

@@ -11,3 +11,35 @@
     display: inline-block;
   }
 }
+.top-logo-section{
+  border-bottom: 1px solid $lightgray;
+}
+
+.page-title{
+  font-family: lato, sans-serif;
+  border-bottom: 1px solid $lightgray;
+}
+.page-content{
+  text-align: justify;
+  width: 70%;
+  min-width: 250px; 
+  margin:auto;
+
+}
+
+.thanks-msg{
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+.top-bar{
+  border-bottom: 1px solid $lightgray;
+  //padding-top: 20px;
+  //padding-bottom: 60px;
+}
+
+.picture{
+  margin-top: 12px;
+}

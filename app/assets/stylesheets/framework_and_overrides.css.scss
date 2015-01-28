@@ -3,12 +3,20 @@
 
 // override for the 'Home' navigation link
 .top-bar .name {
-  font-size: rem-calc(13);
+  font-size: 14px;
   line-height: 45px; }
 .top-bar .name a {
   font-weight: normal;
-  color: white;
-  padding: 0 15px; }
+  color: $darklategray;
+  padding-left : 29px;
+  padding-right : 29px; 
+  padding-top: 16px;
+  padding-bottom: 29px;
+  text-transform: uppercase;
+  &:hover{
+    color: $logopink;
+  }
+}
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create mixins using Foundation classes
