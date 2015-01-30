@@ -17,14 +17,14 @@
   /   phone number here
 
 
-.row    
+.row.light-border-bottom    
   %nav.top-bar{"data-topbar" => true}
     %ul.title-area
       %li.name
         = link_to 'Home', root_path 
       %li.toggle-topbar.menu-icon
         %a{:href => "#"}
-          Menu
+          %i.fa.fa-bars.fa-2x
     .top-bar-section
       %ul
         = render 'layouts/navigation_links'
