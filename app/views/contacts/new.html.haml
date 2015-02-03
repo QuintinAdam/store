@@ -1,0 +1,23 @@
+- content_for :title do
+  Contact
+.row.text-center
+  .page-title.pad-top-25.pad-bottom-25.margin-bottom-30
+    %h3.text-gray Contact
+.row 
+  = simple_form_for @contact, html: {id: "contactForm", class: 'form-horizontal' } do |f|
+    .floating-label-form-group.controls
+      = f.input :name, required: true, placeholder: "Name", input_html: {id: "name", class: "form-control"}
+    .floating-label-form-group.controls
+
+      = f.input :email, required: true, label: "Email Address", placeholder: "Email Address", input_html: {id: "email", class: "form-control"}
+    .floating-label-form-group.controls
+      = f.input :message, required: true, placeholder: "Message", input_html: {id: "message", class: "form-control"}
+    .form-actions
+      = f.button :submit, 'Send', class: "button"
+
+  .page-content.text-gray
+    %h4.text-gray.main-font Contact The Flower Alley By Phone
+    %p= phone_number_link("(248) 305-9190")
+    %h4.text-gray.main-font Stop by our Store
+    %p 25914 Novi Rd. | Novi, MI 48375
+

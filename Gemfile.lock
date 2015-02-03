@@ -297,6 +297,9 @@ GEM
     lumberjack (1.0.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mail_form (1.5.0)
+      actionmailer (>= 3.2, < 5)
+      activemodel (>= 3.2, < 5)
     meta_request (0.3.4)
       callsite (~> 0.0, >= 0.0.11)
       rack-contrib (~> 1.1)
@@ -525,6 +528,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   letter_opener
+  mail_form
   meta_request
   minitest-rails
   pg

@@ -45,6 +45,7 @@ group :development do
   gem 'guard-livereload'
   gem 'rack-livereload'
   gem 'ruby_gntp'
+  gem 'mail_form'
 end
 
 group :development, :test do
