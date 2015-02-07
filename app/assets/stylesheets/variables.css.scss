@@ -25,6 +25,9 @@ $lightgray: #d2d2d2;
 .bg-soft-pink{
   background-color: lighten($logopink,15%); 
 }
+.bg-logopink{
+  background-color: $logopink; 
+}
 
 
 .top-area{
