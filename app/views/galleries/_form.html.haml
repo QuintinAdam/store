@@ -1,0 +1,24 @@
+= simple_form_for @gallery do |f|
+  - if @gallery.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@gallery.errors.count, "error")
+        prohibited
+        this gallery from being saved:
+      %ul
+        - @gallery.errors.full_messages.each do |msg|
+          %li= msg
+  %p
+    = f.input :title
+    %br/
+  %p
+    = f.input :photo
+    %br/
+  %p
+    = f.input :category, collection: @categories, prompt: "Select the photo category"
+    %br/
+  %p
+    = f.input :description
+    %br/
+  %p
+    = f.submit 'Submit', :class => 'button right'

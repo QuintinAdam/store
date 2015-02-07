@@ -24,6 +24,7 @@ gem 'simple_form'
 gem 'figaro', '>= 1.0.0.rc1'
 gem 'friendly_id'
 gem 'cocoon'
+gem "paperclip", "~> 4.2"
 
 group :development do
   gem 'awesome_print', require: false

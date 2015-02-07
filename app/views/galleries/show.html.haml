@@ -1,0 +1,7 @@
+- content_for :title do
+  = @gallery.title
+  \: Coding My Life
+- content_for :description do
+  = @gallery.description
+%h2= @gallery.title 
+= image_tag (@gallery.photo.url(:medium))
