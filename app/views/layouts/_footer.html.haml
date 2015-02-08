@@ -5,34 +5,43 @@
 .footer-menu.pad-top-15
   %ul.footer.links.centered-list.tiny-font.margin-bottom-5
     %li
-      = link_to "Shop" ,'#', class: 'button-link text-logopink '
-      %span ||
+      = link_to "Shop" , spree.root_url, class: 'button-link text-logopink '
+      %span
+        |
     %li
       = link_to "About Us" ,page_path('about'),class: 'button-link text-logopink'
-      %span ||
+      %span
+        |
     %li
-      = link_to "Weddings & events" ,page_path('weddings_&_events'),class: 'button-link text-logopink'
-      %span ||
+      = link_to "Weddings & Events" ,page_path('weddings-and-events'),class: 'button-link text-logopink'
+      %span
+        |
     %li
       = link_to "Sympathy" ,page_path('sympathy'),class: 'button-link text-logopink'
-      %span ||
+      %span
+        |
     %li
       = link_to "Reviews" ,page_path('reviews'),class: 'button-link text-logopink'
-      %span ||
+      %span
+        |
     %li
       = link_to "Gallery" ,galleries_path,class: 'button-link text-logopink'
-      %span ||
+      %span
+        |
     %li
       = link_to "Contact" ,new_contact_path,class: 'button-link text-logopink'
-      %span ||
+      %span
+        |
     %li
-      = link_to "Terms of Service" ,'#',class: 'button-link text-logopink'
-      %span ||
+      = link_to "Terms of Service" , page_path('terms-of-service'),class: 'button-link text-logopink'
+      %span
+        |
     %li
-      = link_to "Privacy Policy " ,'#',class: 'button-link text-logopink'
-      %span ||
+      = link_to "Privacy Policy " , page_path('privacy-policy'),class: 'button-link text-logopink'
+      %span
+        |
     %li
-      = link_to " Sitemap" ,'#',class: 'button-link text-logopink'
+      = link_to " Sitemap" , page_path('sitemap'),class: 'button-link text-logopink'
 
   %ul.social-icons.centered-list.margin-botton-0
     %li
@@ -42,11 +51,11 @@
       = link_to "#",class: "text-logopink", target: "_blank" do
         %i.fa.fa-pinterest-square.fa-2x
     %li
-      = link_to "#", class: "text-logopink", target: "_blank" do
+      = link_to "https://plus.google.com/105930216777971676614/about?hl=en", class: "text-logopink", target: "_blank" do
         %i.fa.fa-google-plus-square.fa-2x
     %li
       = link_to "#", class: "text-logopink" , target: "_blank"do
-        %i.fa.fa-instagram.fa-2x  
+        %i.fa.fa-instagram.fa-2x
   %ul.payment-options.centered-list.silver
     %li
       %i.fa.fa-cc-visa.fa-2x
@@ -57,8 +66,8 @@
     %li
       %i.fa.fa-cc-mastercard.fa-2x
   .footer-copyright.darkgray
-    Copyright &copy; The flower Alley 2015 
-      
-    
+    Copyright &copy; The flower Alley 2015
+
+
 
 

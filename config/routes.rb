@@ -1,38 +1,76 @@
 Rails.application.routes.draw do
   resources :galleries
-  # This line mounts Spree's routes at the root of your application.
-  # This means, any requests to URLs such as /products, will go to Spree::ProductsController.
-  # If you would like to change where this engine is mounted, simply change the :at option to something different.
-  #
-  # We ask that you don't use the :as option here, as Spree relies on it being the default of "spree"
   mount Spree::Core::Engine, :at => '/store'
   resources "contacts", only: [:new, :create]
-  root to: 'visitors#index'
+  root to: 'home#index'
 end
 
 # == Route Map
 #
-#                   Prefix Verb   URI Pattern              Controller#Action
-#                    spree        /                        Spree::Core::Engine
-#         new_user_session GET    /sign-in(.:format)       devise/sessions#new
-#             user_session POST   /sign-in(.:format)       devise/sessions#create
-#     destroy_user_session DELETE /sign-out(.:format)      devise/sessions#destroy
-#            user_password POST   /password(.:format)      devise/passwords#create
-#        new_user_password GET    /password/new(.:format)  devise/passwords#new
-#       edit_user_password GET    /password/edit(.:format) devise/passwords#edit
-#                          PATCH  /password(.:format)      devise/passwords#update
-#                          PUT    /password(.:format)      devise/passwords#update
-# cancel_user_registration GET    /cancel(.:format)        devise/registrations#cancel
-#        user_registration POST   /                        devise/registrations#create
-#    new_user_registration GET    /sign-up(.:format)       devise/registrations#new
-#   edit_user_registration GET    /edit(.:format)          devise/registrations#edit
-#                          PATCH  /                        devise/registrations#update
-#                          PUT    /                        devise/registrations#update
-#                          DELETE /                        devise/registrations#destroy
-#                     root GET    /                        visitors#index
-#                     page GET    /pages/*id               high_voltage/pages#show
+#       Prefix Verb   URI Pattern                   Controller#Action
+#    galleries GET    /galleries(.:format)          galleries#index
+#              POST   /galleries(.:format)          galleries#create
+#  new_gallery GET    /galleries/new(.:format)      galleries#new
+# edit_gallery GET    /galleries/:id/edit(.:format) galleries#edit
+#      gallery GET    /galleries/:id(.:format)      galleries#show
+#              PATCH  /galleries/:id(.:format)      galleries#update
+#              PUT    /galleries/:id(.:format)      galleries#update
+#              DELETE /galleries/:id(.:format)      galleries#destroy
+#        spree        /store                        Spree::Core::Engine
+#     contacts POST   /contacts(.:format)           contacts#create
+#  new_contact GET    /contacts/new(.:format)       contacts#new
+#         root GET    /                             home#index
+#         page GET    /*id                          high_voltage/pages#show
 #
 # Routes for Spree::Core::Engine:
+#                            new_spree_user_session GET    /user/spree_user/sign_in(.:format)                                          spree/user_sessions#new
+#                                spree_user_session POST   /user/spree_user/sign_in(.:format)                                          spree/user_sessions#create
+#                        destroy_spree_user_session GET    /user/spree_user/logout(.:format)                                           spree/user_sessions#destroy
+#                               spree_user_password POST   /user/spree_user/password(.:format)                                         spree/user_passwords#create
+#                           new_spree_user_password GET    /user/spree_user/password/new(.:format)                                     spree/user_passwords#new
+#                          edit_spree_user_password GET    /user/spree_user/password/edit(.:format)                                    spree/user_passwords#edit
+#                                                   PATCH  /user/spree_user/password(.:format)                                         spree/user_passwords#update
+#                                                   PUT    /user/spree_user/password(.:format)                                         spree/user_passwords#update
+#                    cancel_spree_user_registration GET    /user/spree_user/cancel(.:format)                                           spree/user_registrations#cancel
+#                           spree_user_registration POST   /user/spree_user(.:format)                                                  spree/user_registrations#create
+#                       new_spree_user_registration GET    /user/spree_user/sign_up(.:format)                                          spree/user_registrations#new
+#                      edit_spree_user_registration GET    /user/spree_user/edit(.:format)                                             spree/user_registrations#edit
+#                                                   PATCH  /user/spree_user(.:format)                                                  spree/user_registrations#update
+#                                                   PUT    /user/spree_user(.:format)                                                  spree/user_registrations#update
+#                                                   DELETE /user/spree_user(.:format)                                                  spree/user_registrations#destroy
+#                                         edit_user GET    /users/:id/edit(.:format)                                                   spree/users#edit
+#                                              user PATCH  /users/:id(.:format)                                                        spree/users#update
+#                                                   PUT    /users/:id(.:format)                                                        spree/users#update
+#                                             login GET    /login(.:format)                                                            spree/user_sessions#new
+#                                create_new_session POST   /login(.:format)                                                            spree/user_sessions#create
+#                                            logout GET    /logout(.:format)                                                           spree/user_sessions#destroy
+#                                            signup GET    /signup(.:format)                                                           spree/user_registrations#new
+#                                      registration POST   /signup(.:format)                                                           spree/user_registrations#create
+#                                  recover_password GET    /password/recover(.:format)                                                 spree/user_passwords#new
+#                                    reset_password POST   /password/recover(.:format)                                                 spree/user_passwords#create
+#                                     edit_password GET    /password/change(.:format)                                                  spree/user_passwords#edit
+#                                   update_password PUT    /password/change(.:format)                                                  spree/user_passwords#update
+#                             checkout_registration GET    /checkout/registration(.:format)                                            spree/checkout#registration
+#                      update_checkout_registration PUT    /checkout/registration(.:format)                                            spree/checkout#update_registration
+#                                           account POST   /account(.:format)                                                          spree/users#create
+#                                       new_account GET    /account/new(.:format)                                                      spree/users#new
+#                                      edit_account GET    /account/edit(.:format)                                                     spree/users#edit
+#                                                   GET    /account(.:format)                                                          spree/users#show
+#                                                   PATCH  /account(.:format)                                                          spree/users#update
+#                                                   PUT    /account(.:format)                                                          spree/users#update
+#                                                   DELETE /account(.:format)                                                          spree/users#destroy
+#                      new_admin_spree_user_session GET    /user/spree_user/sign_in(.:format)                                          spree/admin/user_sessions#new
+#                          admin_spree_user_session POST   /user/spree_user/sign_in(.:format)                                          spree/admin/user_sessions#create
+#                  destroy_admin_spree_user_session GET    /user/spree_user/logout(.:format)                                           spree/admin/user_sessions#destroy
+#                         admin_spree_user_password POST   /user/spree_user/password(.:format)                                         spree/admin/user_passwords#create
+#                     new_admin_spree_user_password GET    /user/spree_user/password/new(.:format)                                     spree/admin/user_passwords#new
+#                    edit_admin_spree_user_password GET    /user/spree_user/password/edit(.:format)                                    spree/admin/user_passwords#edit
+#                                                   PATCH  /user/spree_user/password(.:format)                                         spree/admin/user_passwords#update
+#                                                   PUT    /user/spree_user/password(.:format)                                         spree/admin/user_passwords#update
+#                                admin_unauthorized GET    /admin/authorization_failure(.:format)                                      spree/admin/user_sessions#authorization_failure
+#                                       admin_login GET    /admin/login(.:format)                                                      spree/admin/user_sessions#new
+#                          admin_create_new_session POST   /admin/login(.:format)                                                      spree/admin/user_sessions#create
+#                                      admin_logout GET    /admin/logout(.:format)                                                     spree/admin/user_sessions#destroy
 #                      skrill_cancel_order_checkout GET    /orders/:order_id/checkout/skrill_cancel(.:format)                          spree/checkout#skrill_cancel
 #                      skrill_return_order_checkout GET    /orders/:order_id/checkout/skrill_return(.:format)                          spree/checkout#skrill_return
 #                                    order_checkout POST   /orders/:order_id/checkout(.:format)                                        spree/checkout#create
