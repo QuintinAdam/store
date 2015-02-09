@@ -1,0 +1,20 @@
+.row
+  .col-sm-12
+    .page-header
+      %h1 SEO Tags
+    %ul.no-bullet
+      - PUBLIC_PAGES.each do |page|
+        - tags = MetaTag.where(page_lookup: page[:lookup])
+        .panel{id: page[:lookup]}
+          %li
+            %h3= page[:name]
+            %ul.no-bullet
+              - tags.each do |tag|
+                %li{id: "tag-#{tag.id}"}
+                  = link_to admin_edit_seo_path(tag), remote: true, class: 'edit-seo', data: {attributes: tag.id} do
+                    %i.fa.fa-pencil
+                  %strong
+                    = tag.tag_type.try(:humanize)
+                    = tag.name.try(:humanize) unless tag.name.downcase == 'title'
+                    \:
+                  %span.seo-content= tag.content

@@ -23,10 +23,10 @@ $lightgray: #d2d2d2;
 
 
 .bg-soft-pink{
-  background-color: lighten($logopink,15%); 
+  background-color: lighten($logopink,15%);
 }
 .bg-logopink{
-  background-color: $logopink; 
+  background-color: $logopink;
 }
 
 
@@ -39,7 +39,7 @@ $lightgray: #d2d2d2;
     color: white;
     font-size: 16px;
    }
-    
+
   }
 }
 
@@ -71,9 +71,11 @@ $lightgray: #d2d2d2;
   font-weight: 500;
 }
 
+.green{
+  color: $green;
+}
 
 
 
- 
 
 

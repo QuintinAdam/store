@@ -1,26 +1,37 @@
 Rails.application.routes.draw do
-  resources :galleries
   mount Spree::Core::Engine, :at => '/store'
+
+  resources :galleries
+
+  namespace :admin do
+    get '/seo', to: 'seo#index', as: :seo
+    get '/seo/:id', to: 'seo#edit', as: :edit_seo
+    put '/seo/:id/update', to: 'seo#update', as: :update_seo
+  end
+
   resources "contacts", only: [:new, :create]
   root to: 'home#index'
 end
 
 # == Route Map
 #
-#       Prefix Verb   URI Pattern                   Controller#Action
-#    galleries GET    /galleries(.:format)          galleries#index
-#              POST   /galleries(.:format)          galleries#create
-#  new_gallery GET    /galleries/new(.:format)      galleries#new
-# edit_gallery GET    /galleries/:id/edit(.:format) galleries#edit
-#      gallery GET    /galleries/:id(.:format)      galleries#show
-#              PATCH  /galleries/:id(.:format)      galleries#update
-#              PUT    /galleries/:id(.:format)      galleries#update
-#              DELETE /galleries/:id(.:format)      galleries#destroy
-#        spree        /store                        Spree::Core::Engine
-#     contacts POST   /contacts(.:format)           contacts#create
-#  new_contact GET    /contacts/new(.:format)       contacts#new
-#         root GET    /                             home#index
-#         page GET    /*id                          high_voltage/pages#show
+#           Prefix Verb   URI Pattern                     Controller#Action
+#            spree        /store                          Spree::Core::Engine
+#        galleries GET    /galleries(.:format)            galleries#index
+#                  POST   /galleries(.:format)            galleries#create
+#      new_gallery GET    /galleries/new(.:format)        galleries#new
+#     edit_gallery GET    /galleries/:id/edit(.:format)   galleries#edit
+#          gallery GET    /galleries/:id(.:format)        galleries#show
+#                  PATCH  /galleries/:id(.:format)        galleries#update
+#                  PUT    /galleries/:id(.:format)        galleries#update
+#                  DELETE /galleries/:id(.:format)        galleries#destroy
+#        admin_seo GET    /admin/seo(.:format)            admin/seo#index
+#   admin_edit_seo GET    /admin/seo/:id(.:format)        admin/seo#edit
+# admin_update_seo PUT    /admin/seo/:id/update(.:format) admin/seo#update
+#         contacts POST   /contacts(.:format)             contacts#create
+#      new_contact GET    /contacts/new(.:format)         contacts#new
+#             root GET    /                               home#index
+#             page GET    /*id                            high_voltage/pages#show
 #
 # Routes for Spree::Core::Engine:
 #                            new_spree_user_session GET    /user/spree_user/sign_in(.:format)                                          spree/user_sessions#new

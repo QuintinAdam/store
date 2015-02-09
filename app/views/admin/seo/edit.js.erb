@@ -1,0 +1,2 @@
+$("#tag-<%= @seo.id%> i.fa.fa-pencil").hide();
+$("#tag-<%= @seo.id%>").append("<%= j(render 'seo_form', seo: @seo, page: params[:page]) %>");

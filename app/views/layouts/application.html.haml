@@ -1,9 +1,17 @@
 !!!
 %html
   %head
+    - unless @meta_data.empty?
+      - @meta_data.each do |md|
+        - if md.tag_type == "meta"
+          %meta{:content => md.content, :name => md.name}/
+        - else
+          = content_tag md.tag_type, md.content
+    - else
+      %title= content_for?(:title) ? yield(:title) : 'The Flower Alley'
+      %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'The Flower Alley'}"}
+
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
-    %title= content_for?(:title) ? yield(:title) : 'The Flower Alley'
-    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'The Flower Alley'}"}
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'vendor/modernizr'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
