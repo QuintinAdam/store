@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150208182248) do
+ActiveRecord::Schema.define(version: 20150214183105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -129,15 +129,6 @@ ActiveRecord::Schema.define(version: 20150208182248) do
 
   add_index "spree_calculators", ["calculable_id", "calculable_type"], name: "index_spree_calculators_on_calculable_id_and_calculable_type", using: :btree
   add_index "spree_calculators", ["id", "type"], name: "index_spree_calculators_on_id_and_type", using: :btree
-
-  create_table "spree_configurations", force: :cascade do |t|
-    t.string   "name"
-    t.string   "type",       limit: 50
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-  end
-
-  add_index "spree_configurations", ["name", "type"], name: "index_spree_configurations_on_name_and_type", using: :btree
 
   create_table "spree_countries", force: :cascade do |t|
     t.string   "iso_name"
@@ -485,6 +476,7 @@ ActiveRecord::Schema.define(version: 20150208182248) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "code"
   end
 
   create_table "spree_promotion_rules", force: :cascade do |t|
@@ -627,11 +619,11 @@ ActiveRecord::Schema.define(version: 20150208182248) do
     t.integer  "return_authorization_id"
     t.integer  "inventory_unit_id"
     t.integer  "exchange_variant_id"
-    t.datetime "created_at",                                                             null: false
-    t.datetime "updated_at",                                                             null: false
-    t.decimal  "pre_tax_amount",                  precision: 12, scale: 4, default: 0.0, null: false
-    t.decimal  "included_tax_total",              precision: 12, scale: 4, default: 0.0, null: false
-    t.decimal  "additional_tax_total",            precision: 12, scale: 4, default: 0.0, null: false
+    t.datetime "created_at",                                                              null: false
+    t.datetime "updated_at",                                                              null: false
+    t.decimal  "pre_tax_amount",                  precision: 12, scale: 4, default: 0.0,  null: false
+    t.decimal  "included_tax_total",              precision: 12, scale: 4, default: 0.0,  null: false
+    t.decimal  "additional_tax_total",            precision: 12, scale: 4, default: 0.0,  null: false
     t.string   "reception_status"
     t.string   "acceptance_status"
     t.integer  "customer_return_id"
@@ -640,6 +632,7 @@ ActiveRecord::Schema.define(version: 20150208182248) do
     t.text     "acceptance_status_errors"
     t.integer  "preferred_reimbursement_type_id"
     t.integer  "override_reimbursement_type_id"
+    t.boolean  "resellable",                                               default: true, null: false
   end
 
   add_index "spree_return_items", ["customer_return_id"], name: "index_return_items_on_customer_return_id", using: :btree
@@ -931,7 +924,6 @@ ActiveRecord::Schema.define(version: 20150208182248) do
   add_index "spree_taxons_prototypes", ["taxon_id"], name: "index_spree_taxons_prototypes_on_taxon_id", using: :btree
 
   create_table "spree_trackers", force: :cascade do |t|
-    t.string   "environment"
     t.string   "analytics_id"
     t.boolean  "active",       default: true
     t.datetime "created_at",                  null: false

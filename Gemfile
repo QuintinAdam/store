@@ -21,7 +21,7 @@ gem 'font-awesome-rails'
 
 gem 'high_voltage'
 gem 'simple_form'
-gem 'figaro', '>= 1.0.0.rc1'
+gem 'figaro'
 gem 'friendly_id'
 gem 'cocoon'
 gem "paperclip", "~> 4.2"
@@ -73,6 +73,6 @@ group :production, :staging do
   gem 'rails_12factor'
 end
 
-gem 'spree', github: 'spree/spree', branch: 'rails-4-2'
-gem 'spree_gateway', github: 'spree/spree_gateway', branch: 'master'
+gem 'spree', github: 'spree/spree', branch: 'master'
+# gem 'spree_gateway', github: 'spree/spree_gateway', branch: 'master'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: 'master'
