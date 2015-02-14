@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount Spree::Core::Engine, :at => '/store'
+  mount Spree::Core::Engine, :at => '/shop'
 
   resources :galleries
 

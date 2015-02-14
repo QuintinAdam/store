@@ -52,7 +52,6 @@ PUBLIC_PAGES = [
     id: "sympathy",
     lookup: "high_voltage/pages#show#sympathy"
   },
-
   {
     name: "Terms of Services Page",
     controller: "high_voltage/pages",
