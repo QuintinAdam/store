@@ -2,7 +2,7 @@
 task set_default: ["store_setup", "add_tax_categories", "add_tax_zones", "add_tax_rate", "add_shipping_categories", "add_shipping_methods", "add_taxonomies"]
 
 desc "store setup"
-task :store_setup :environment do
+task store_setup: :environment do
   store = Spree::Store.first
   store.update_attributes(name: ENV['STORE_NAME'], url: ENV['STORE_URL'], seo_title: ENV['DEFAULT_SEO_TITLE'], meta_description: ENV['DEFAULT_SEO_DESCRIPTION'], mail_from_address: ENV['DEFAULT_EMAIL_FROM'])
 end
@@ -58,7 +58,7 @@ task add_shipping_methods: :environment do
       shipping_method.shipping_categories << category
       shipping_method.zones << Spree::Zone.find_by_name(ENV['STORE_STATE'])
       shipping_method.save
-      shipping_method.create_calculator(type: shipping_method.calculator_type, preferences: {amount: (ship_method == 'Pickup' ? 0 : 10), currency: "USD"})
+      shipping_method.create_calculator(type: shipping_method.calculator_type, preferences: {amount: (ship_method == 'Pickup' ? 0 : 11.95), currency: "USD"})
     end
   end
 end
@@ -97,4 +97,61 @@ task add_taxonomies: :environment do
   end
 end
 
+#product properties
+desc "Sets product properties (attributes)"
+task add_properties: :environment do
+  Spree::Property.delete_all
+  flower_properties = ["Primary Flowers", "Secondary Flowers", "Vase Type"]
+  balloon_properties = ["Balloon Type", "Balloon Count"]
+  gift_properties = ["Brand"]
+  properties = flower_properties + balloon_properties + gift_properties
+  properties.each do |property|
+    Spree::Property.create(name: property, presentation: property)
+  end
+end
 
+#product options
+desc "Sets product options (attributes)"
+task add_options: :environment do
+  Spree::OptionType.delete_all
+  Spree::OptionValue.delete_all
+  option = Spree::OptionType.create(name: "flower-size", presentation: "Size", position: 1)
+  option.option_values.create(position: 1, name: "Standard", presentation: "Standard", option_type_id: option.id)
+  option.option_values.create(position: 2, name: "Deluxe", presentation: "Deluxe", option_type_id: option.id)
+  option.option_values.create(position: 3, name: "Premium", presentation: "Premium", option_type_id: option.id)
+end
+
+#product prototypes
+desc "Sets prototypes"
+task add_prototypes: :environment do
+  Spree::Prototype.delete_all
+  flower_properties = ["Primary Flowers", "Secondary Flowers", "Vase Type"]
+  balloon_properties = ["Balloon Type", "Balloon Count"]
+  gift_properties = ["Brand"]
+
+  flower = Spree::Prototype.create(name: "Flowers")
+  flower_properties.each do |property|
+    flower.properties << Spree::Property.find_by_name(property)
+  end
+  flower.option_types << Spree::OptionType.find_by_name("flower-size")
+  flower.taxons << Spree::Taxon.find_by_name("Flowers")
+  flower.save
+
+  balloon = Spree::Prototype.create(name: "Balloon")
+  balloon_properties.each do |property|
+    balloon.properties << Spree::Property.find_by_name(property)
+  end
+  balloon.taxons << Spree::Taxon.find_by_name("Balloon")
+  balloon.save
+
+  gift = Spree::Prototype.create(name: "Gifts")
+  editable = Spree::Prototype.create(name: "Editables")
+  gift_properties.each do |property|
+    gift.properties << Spree::Property.find_by_name(property)
+    editable.properties << Spree::Property.find_by_name(property)
+  end
+  gift.taxons << Spree::Taxon.find_by_name("Gifts")
+  editable.taxons << Spree::Taxon.find_by_name("Chocolates")
+  gift.save
+  editable.save
+end
