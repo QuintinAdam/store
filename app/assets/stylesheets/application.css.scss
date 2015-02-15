@@ -5,6 +5,30 @@
 @import "framework_and_overrides";
 @import "font-awesome";
 
+.main-title{
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 30px;
+  font-family: lato, sans-serif;
+  border-bottom: 1px solid $lightgray;
+  text-align: center;
+  h3{
+  color: #666666; //gray 
+  }
+}
+
+.sub-title{
+  font-family: Lato, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 25px;
+  color: #666666; 
+}
+.page-content{
+  padding-top: 30px
+}
+
+
 .centered-list{
   list-style: none;
   li{
@@ -15,17 +39,10 @@
   border-bottom: 1px solid $lightgray;
 }
 
-.page-title{
-  font-family: lato, sans-serif;
-  border-bottom: 1px solid $lightgray;
-}
-.page-content{
+.justify{
   text-align: justify;
-  width: 70%;
-  min-width: 250px;
-  margin:auto;
-
 }
+
 
 .thanks-msg{
   text-align: center;
@@ -45,7 +62,7 @@
 }
 
 .contact-body{
-  text-align: left;
+  // text-align: left;
 }
 .contact-name{
   text-align: left;

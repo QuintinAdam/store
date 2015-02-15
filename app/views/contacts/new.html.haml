@@ -1,12 +1,10 @@
-- content_for :title do
-  Contact
-.row.text-center
-  .page-title.pad-top-25.pad-bottom-25.margin-bottom-30
-    %h3.text-gray Contact
-.row.contact-body.pad-top-30
-  .contact-type.text-gray
+.row
+  .main-title
+    %h3 Contact
+.row.page-content
+  .contact-type
     .contact-title
-      %h4.text-gray.main-font.text-center.margin-bottom-25 Contact The Flower Alley By Email 
+      %h4.text-center.sub-title Contact The Flower Alley By Email 
     = simple_form_for @contact, html: {id: "contactForm", class: 'form-horizontal' } do |f|
       .floating-label-form-group.controls.contact-name.small-10.small-centered.medium-5.columns
         = f.input :name, required: true, placeholder: "Name", input_html: {id: "name", class: "form-control text-gray"}

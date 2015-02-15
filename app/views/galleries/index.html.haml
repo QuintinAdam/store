@@ -1,5 +1,14 @@
-.row
+.row.text-center
+  .main-title
+    %h3 Gallery
+.row.page-content
   .large-3.columns.show-for-large-up
     = render 'categories'
   .small-12.large-9.columns    
-     
+    / %ul.clearing-thumbs.small-block-grid-4{"data-clearing" => ""}
+    / - @gallery_photos.each do |photo|
+    / %li
+    /   = link_to photo.url(:large) do
+    /     = image_tag(photo.url(:medium), data-caption: photo.description)   
+
+
