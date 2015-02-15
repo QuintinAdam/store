@@ -5,6 +5,13 @@ DOMAIN_NAME:                      store.dev
 ADMIN_EMAIL:                      test@test.com
 ADMIN_PASSWORD:                   12345678
 ADMIN_NAME:                       test_admin
+#store information
+STORE_NAME:                       The Flower Alley
+STORE_URL:                        thefloweralley.com
+STORE_STATE:                      Michigan
+DEFAULT_SEO_TITLE:                The Flower Alley
+DEFAULT_SEO_DESCRIPTION:          Novis Best Florist
+DEFAULT_EMAIL_FROM:               noreply@thefloweralley.com
 
 production:
   SECRET_TOKEN:

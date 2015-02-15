@@ -1,5 +1,6 @@
 desc "Adds basic seo for each of the static pages"
 task add_seo: :environment do
+  MetaTag.delete_all
   PUBLIC_PAGES.each do |page|
     if MetaTag
       MetaTag.create(tag_type: 'title', name: 'title', content: "Title for #{page[:name]}. Should be less the 55 characters : Site Name", page_lookup: page[:lookup])
