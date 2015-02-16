@@ -1,5 +1,4 @@
-
-task set_default: ["store_setup", "add_tax_categories", "add_tax_zones", "add_tax_rate", "add_shipping_categories", "add_shipping_methods", "add_taxonomies"]
+task set_default: ["store_setup", "add_tax_categories", "add_tax_zones", "add_tax_rate", "add_shipping_categories", "add_shipping_methods", "add_taxonomies", "add_properties", "add_options", "add_prototypes"]
 
 desc "store setup"
 task store_setup: :environment do
@@ -19,7 +18,6 @@ desc "Sets Tax Zones"
 task add_tax_zones: :environment do
   Spree::Zone.delete_all
   zone = Spree::Zone.new(name: ENV['STORE_STATE'], description: ENV['STORE_STATE'] + " Tax Zone", default_tax: true, zone_members_count: 1, kind: "state")
-  # add state to this list
   zone.states << Spree::State.find_by_name(ENV['STORE_STATE'])
   zone.save
 end
