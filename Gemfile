@@ -50,7 +50,7 @@ group :development do
 end
 
 group :development, :test do
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', github: 'rails/web-console', branch: 'master'
   gem 'spring'
   gem 'pry-rails'
   gem 'pry-rescue'

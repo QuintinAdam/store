@@ -1,7 +1,5 @@
 class Admin::SeoController < Admin::BaseController
 
-  skip_before_action :permit_seo!
-
   def index
     @metatags = MetaTag.all
   end

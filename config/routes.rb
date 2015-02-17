@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :galleries
 
   namespace :admin do
+    get '/', to: 'base#index', as: :root
     get '/seo', to: 'seo#index', as: :seo
     get '/seo/:id', to: 'seo#edit', as: :edit_seo
     put '/seo/:id/update', to: 'seo#update', as: :update_seo
