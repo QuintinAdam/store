@@ -1,39 +1,41 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.2.2'
 
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.2'
 gem 'pg'
 gem 'puma'
-
 gem 'devise'
+gem 'figaro'
 
 gem 'haml-rails'
+gem 'simple_form'
+gem 'font-awesome-rails'
+
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
+
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
-gem 'foundation-rails'
-gem 'font-awesome-rails'
+# gem 'aws-sdk', '~> 1.40.3'
+# gem 'unf'
 
-gem 'high_voltage'
-gem 'simple_form'
-gem 'figaro'
-gem 'friendly_id'
-gem 'cocoon'
-gem "paperclip", "~> 4.2"
+# gem 'braintree', '~> 2.43.0'
 
-gem 'mail_form'
+# gem 'rack-ssl-enforcer'
+
+# Logging
+# gem 'lograge' # more readable logs
+# gem 'logstash-event' # for logstash json format
 
 group :development do
-  gem 'awesome_print', require: false
   gem 'powder'
   gem 'letter_opener'
   gem 'better_errors'
-  gem 'binding_of_caller', :platforms=>[:mri_21]
+  gem 'binding_of_caller'
   gem 'meta_request'
   gem 'xray-rails'
   gem 'html2haml'
@@ -45,29 +47,20 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-minitest'
   gem 'guard-pow'
-  gem 'guard-livereload'
-  gem 'rack-livereload'
   gem 'ruby_gntp'
 end
 
 group :development, :test do
   gem 'jazz_fingers'
-  gem 'web-console', github: 'rails/web-console', branch: 'master'
-  gem 'spring'
-  gem 'pry-rails'
-  gem 'pry-rescue'
-  gem 'pry-remote'
   gem 'rubocop'
   gem 'ffaker'
   gem 'factory_girl_rails'
-  gem 'minitest-rails'
+  gem 'minitest-focus'
+  gem 'minitest-rails-capybara' # gem 'minitest' - gem 'minitest-rails' - gem 'minitest-capybara' - gem 'capybara'
+  # gem 'selenium-webdriver'
 end
 
 group :test do
-  # gem 'vcr'
-  # gem 'webmock'
-  # gem 'capybara'
-  # gem 'coveralls', require: false
   gem 'simplecov', require: false
 end
 
@@ -75,6 +68,7 @@ group :production, :staging do
   gem 'rails_12factor'
 end
 
-gem 'spree', github: 'spree/spree', branch: 'master'
-gem 'spree_gateway', github: 'spree/spree_gateway', branch: 'master'
-gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: 'master'
+gem 'spree', git: 'git@github.com:spree/spree.git', branch: '3-0-stable'
+gem 'spree_auth_devise', git: 'git@github.com:spree/spree_auth_devise.git', branch: '3-0-stable'
+gem 'spree_gateway', git: 'git@github.com:spree/spree_gateway.git', branch: '3-0-stable'
+gem 'spree_admin_bar', git: 'git@github.com:QuintinAdam/spree_admin_bar.git', branch: '3-0-stable'
