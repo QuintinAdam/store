@@ -26,6 +26,8 @@ gem 'friendly_id'
 gem 'cocoon'
 gem "paperclip", "~> 4.2"
 
+gem 'mail_form'
+
 group :development do
   gem 'awesome_print', require: false
   gem 'powder'
@@ -46,10 +48,10 @@ group :development do
   gem 'guard-livereload'
   gem 'rack-livereload'
   gem 'ruby_gntp'
-  gem 'mail_form'
 end
 
 group :development, :test do
+  gem 'jazz_fingers'
   gem 'web-console', github: 'rails/web-console', branch: 'master'
   gem 'spring'
   gem 'pry-rails'
