@@ -5,7 +5,4 @@
 This application requires:
 
 - Ruby 2.2.2
-- Rails 4.2.2
-
-###Getting Started
-
+- Rails 4.2.3
