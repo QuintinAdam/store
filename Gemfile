@@ -57,6 +57,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'minitest-focus'
   gem 'minitest-rails-capybara' # gem 'minitest' - gem 'minitest-rails' - gem 'minitest-capybara' - gem 'capybara'
+  gem 'web-console'
   # gem 'selenium-webdriver'
 end
 
