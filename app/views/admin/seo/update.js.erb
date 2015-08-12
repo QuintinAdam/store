@@ -1,4 +1,0 @@
-$("#edit_meta_tag_<%=@seo.id %>").remove();
-$("#tag-<%= @seo.id%> i.fa.fa-pencil").show();
-$("#tag-<%= @seo.id%>").append("<span class='green'> <i class='fa fa-check'> </i> Updated Successfully</span>");
-$("#tag-<%= @seo.id%> span.seo-content").html("<%=@seo.content.try(:html_safe) %>")

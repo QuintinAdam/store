@@ -1,8 +1,0 @@
-#custom-spree-header
-  %header#header{"data-hook" => ""}
-    .container
-      .row
-        %figure#logo.col-md-4{"data-hook" => ""}= image_tag('floweralley.png')
-        = render :partial => 'spree/shared/nav_bar'
-  .container
-    = render :partial => 'spree/shared/main_nav_bar' if store_menu?
