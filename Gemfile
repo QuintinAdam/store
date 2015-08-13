@@ -75,5 +75,5 @@ gem 'spree_gateway', git: 'git@github.com:spree/spree_gateway.git', branch: '3-0
 gem 'spree_admin_bar', git: 'git@github.com:QuintinAdam/spree_admin_bar.git', branch: '3-0-stable'
 gem 'spree_social', github: 'spree-contrib/spree_social', branch: '3-0-stable'
 gem 'spree_social_products', git: 'git@github.com:spree-contrib/spree_social_products.git', branch: '3-0-stable'
-
+gem 'spree_contact_us', git:'git@github.com:spree-contrib/spree_contact_us.git', branch: '3-0-stable'
 
