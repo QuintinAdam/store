@@ -25,7 +25,7 @@ Spree.config do |config|
   # config.company = true # Request company field for billing and shipping addr
 
   # config.address_requires_state =  true # should state/state_name be required
-  # config.admin_interface_logo =  'logo/spree_50.png'
+  config.admin_interface_logo =  'logo/floweralley.png'
   # config.admin_products_per_page =  10
   # config.allow_checkout_on_gateway_error =  false
   # config.allow_guest_checkout =  true
@@ -43,7 +43,7 @@ Spree.config do |config|
   # config.expedited_exchanges_days_window =  14 # the amount of days the customer has to return their item after the expedited exchange is shipped in order to avoid being charged
   # config.last_check_for_spree_alerts =  nil
   # config.layout =  'spree/layouts/spree_application'
-  # config.logo =  'logo/spree_50.png'
+  config.logo =  'logo/floweralley.png'
   # config.max_level_in_taxons_menu =  1 # maximum nesting level in taxons menu
   # config.orders_per_page =  15
   # config.properties_per_page =  15
