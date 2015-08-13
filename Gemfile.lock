@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/spree-contrib/spree_recently_viewed.git
+  revision: 47dab15e8f0541851067b638806c5810bdce3e06
+  branch: 3-0-stable
+  specs:
+    spree_recently_viewed (2.0.0)
+      spree_core (~> 3.0.0)
+
+GIT
   remote: git://github.com/spree-contrib/spree_social.git
   revision: 176a9f1999d47ffee11951e1cbd20779e48a8cf2
   branch: 3-0-stable
@@ -632,6 +640,7 @@ DEPENDENCIES
   spree_auth_devise!
   spree_contact_us!
   spree_gateway!
+  spree_recently_viewed!
   spree_social!
   spree_social_products!
   turbolinks
