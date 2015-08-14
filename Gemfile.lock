@@ -22,6 +22,14 @@ GIT
       spree_core (~> 3.0.0.rc4)
 
 GIT
+  remote: git://github.com/spree/spree_static_content.git
+  revision: d39bb33ffc67041e87800d66d0fd43cfea67373c
+  branch: 3-0-stable
+  specs:
+    spree_static_content (2.3.0)
+      spree_core (~> 3.0.0)
+
+GIT
   remote: git@github.com:QuintinAdam/spree_admin_bar.git
   revision: b31722fb6bbeececa15c0f2f7c2606ae3355c198
   branch: 3-0-stable
@@ -643,6 +651,7 @@ DEPENDENCIES
   spree_recently_viewed!
   spree_social!
   spree_social_products!
+  spree_static_content!
   turbolinks
   uglifier (>= 1.3.0)
   web-console
