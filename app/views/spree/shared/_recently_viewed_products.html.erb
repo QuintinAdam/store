@@ -17,7 +17,7 @@
                   <span class="lead price selling">
                     <%= display_price(product) %>
                   </span>
-                  <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
+                  <span itemprop="priceCurrency" content="<%#= @product.currency %>"></span>
                 <% else %>
                   <span class="price selling"><%= Spree.t('product_not_available_in_this_currency') %></span>
                 <% end %> 
