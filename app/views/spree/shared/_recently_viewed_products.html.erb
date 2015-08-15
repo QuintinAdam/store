@@ -1,0 +1,32 @@
+<% if cached_recently_viewed_products.any? %>
+  <div id="recently_viewed" data-hook>
+    <h3 class="product-section-title"><%= Spree.t(:recently_viewed_products) %></h3>
+    <div class="row">  
+      <ul id="recently_viewed_products" class="list-group">
+        <% cached_recently_viewed_products.each do |product| %>
+          <div class= "col-lg-2 col-md-2 col-sm-6 col-xs-12">
+            <li class="list-unstyled">
+              <div> 
+                <%= small_image(product) %> 
+              </div>
+              <div>
+                <%= link_to product.name, product %>
+              </div>
+              <div>
+                <% if product.price_in(current_currency) and !product.price.nil? %>
+                  <span class="lead price selling">
+                    <%= display_price(product) %>
+                  </span>
+                  <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
+                <% else %>
+                  <span class="price selling"><%= Spree.t('product_not_available_in_this_currency') %></span>
+                <% end %> 
+              </div>
+            </li>
+          </div>  
+        <%end%>
+      </ul>
+    </div>  
+  </div>
+<% end %>
+

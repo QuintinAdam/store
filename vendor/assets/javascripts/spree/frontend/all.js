@@ -11,3 +11,5 @@
 //= require_tree .
 //= require spree/frontend/spree_social_products
 //= require spree/frontend/spree_contact_us
+//= require spree/frontend/spree_quick_view
+//= require spree/product_zoom
